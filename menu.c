@@ -11,6 +11,12 @@
 #include "atris.h"
 #include "display.h"
 #include "menu.h"
+#include <stdbool.h>
+
+bool held_up;
+bool held_down;
+bool held_left;
+bool held_right;
 
 /***************************************************************************
  *      menu()
@@ -341,21 +347,28 @@ handle_radio_event(WalkRadioGroup *wrg, const SDL_Event *ev)
 		return 1;
 
 	    case SDLK_UP:
+	    	if (!held_up) {
 		wrg->wr[wrg->cur].defaultchoice --;
 		if (wrg->wr[wrg->cur].defaultchoice < 0)
 		    wrg->wr[wrg->cur].defaultchoice = wrg->wr[wrg->cur].n - 1;
 		draw_radio(&wrg->wr[wrg->cur], 1);
+	    	held_up = 1;
+		}
 		return -1;
 		break;
 
 	    case SDLK_DOWN:
+	    	if (!held_down) {
 		wrg->wr[wrg->cur].defaultchoice ++;
 		if (wrg->wr[wrg->cur].defaultchoice >= wrg->wr[wrg->cur].n)
 		    wrg->wr[wrg->cur].defaultchoice = 0;
 		draw_radio(&wrg->wr[wrg->cur], 1);
+	    	held_down = 1;
+		}
 		return -1;
 
 	    case SDLK_LEFT:
+	    	if (!held_left) {
 		draw_radio(&wrg->wr[wrg->cur], 0);
 		do { 
 		    wrg->cur--;
@@ -363,9 +376,12 @@ handle_radio_event(WalkRadioGroup *wrg, const SDL_Event *ev)
 			wrg->cur = wrg->n - 1;
 		} while (wrg->wr[wrg->cur].inactive);
 		draw_radio(&wrg->wr[wrg->cur], 1);
+	    	held_left = 1;
+		}
 		return -1;
 
-	    case SDLK_RIGHT: 
+	    case SDLK_RIGHT:
+	    	if (!held_right) { 
 		draw_radio(&wrg->wr[wrg->cur], 0);
 		do { 
 		    wrg->cur++;
@@ -373,11 +389,38 @@ handle_radio_event(WalkRadioGroup *wrg, const SDL_Event *ev)
 			wrg->cur = 0;
 		} while (wrg->wr[wrg->cur].inactive);
 		draw_radio(&wrg->wr[wrg->cur], 1);
+		held_right = 1;
+		}
 		return -1;
 
 	    default:
 		return -1;
 	}
+    } else if (ev->type == SDL_KEYUP) {
+	switch (ev->key.keysym.sym) {
+	    case SDLK_RETURN:
+		return -1;
+
+	    case SDLK_UP:
+		held_up = 0;
+		return -1;
+
+	    case SDLK_DOWN:
+		held_down = 0;
+		return -1;
+
+	    case SDLK_LEFT:
+		held_left = 0;
+		return -1;
+
+	    case SDLK_RIGHT:
+		held_right = 0;
+		return -1;
+
+	    default:
+		return -1;
+	}
+
     }
     return -1;
 }
