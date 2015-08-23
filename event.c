@@ -7,7 +7,7 @@
  * Copyright 2000, Kiri Wagstaff & Westley Weimer
  */
 
-#include <config.h>	/* go autoconf! */
+#include "config.h"	/* go autoconf! */
 #include <unistd.h>
 #include <sys/types.h>
 
@@ -17,6 +17,10 @@
 #if HAVE_WINSOCK_H
 #include <winsock.h>
 #endif
+#endif
+
+#if HAVE_SELECT
+#include <sys/select.h>
 #endif
 
 #include "atris.h"

@@ -7,7 +7,7 @@
 
 #define BUFSIZE 256
 
-#include <config.h>
+#include "config.h"
 #include <assert.h>
 
 #include "atris.h"

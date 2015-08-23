@@ -5,6 +5,12 @@ Alizarin Tetris was written by:
 	Kiri Wagstaff				(wkiri@cs.cornell.edu)
 	Westley Weimer 				(weimer@cs.berkeley.edu)
 
+This version was modified by:
+	usrshare				(usrshare@hashbang.sh)
+
+The full list of contributors is available at the GitHub page:
+    https://github.com/usrshare/atris
+
 Alizarin Tetris also uses:
  o  The magical SDL library by Sam Lantinga, available under the LGPL at:
 	http://www.libsdl.org
@@ -20,6 +26,10 @@ Alizarin Tetris also uses:
 
  o  "xflame.c", which draws those popular flaming backgrounds, freeware
     from The Rasterman (Carsten Haitzler). 
+
+ o  The Squarish Sans CT font by Tim Larson, licensed under the terms
+    of the Open Font License and available at:
+    http://christtrekker.users.sourceforge.net/fnt/squarishsans.shtml
 
 Special thanks to:
  o  Yujia Jin, our first beta-tester. 

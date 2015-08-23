@@ -9,7 +9,7 @@
 
 #define NUM_HIGH_SCORES 10 /* number of scores to save */
 
-#include <config.h>
+#include "config.h"
 #include <assert.h>
 #include <ctype.h>
 

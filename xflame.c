@@ -30,7 +30,7 @@
 
 
 /* INCLUDES! */
-#include <config.h>
+#include "config.h"
 #include "atris.h"
 #include "options.h"
 #include <stdlib.h>

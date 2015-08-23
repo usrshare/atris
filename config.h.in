@@ -69,6 +69,9 @@
    */
 #cmakedefine HAVE_SYS_NDIR_H 1
 
+/* Define to 1 if you have the <sys/select.h> header file. */
+#cmakedefine HAVE_SYS_SELECT_H 1
+
 /* Define to 1 if you have the <sys/socket.h> header file. */
 #cmakedefine HAVE_SYS_SOCKET_H 1
 
@@ -90,8 +93,14 @@
 /* Define to 1 if you have the <winsock.h> header file. */
 #cmakedefine HAVE_WINSOCK_H 1
 
+/* Location of libraries if installed */
+#define ATRIS_LIBDIR "${DATADIR}"
+
+/* Location of state data */
+#define ATRIS_STATEDIR "${LOCALSTATEDIR}"
+
 /* Name of package */
-#cmakedefine PACKAGE "${PROJECT_NAME}"
+#define PACKAGE "${PROJECT_NAME}"
 
 /* Define to the address where bug reports for this package should be sent. */
 #define PACKAGE_BUGREPORT "https://github.io/usrshare/atris"

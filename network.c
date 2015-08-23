@@ -5,7 +5,7 @@
  * Copyright 2000, Kiri Wagstaff & Westley Weimer
  */ 
 
-#include <config.h>	/* go autoconf! */
+#include "config.h"	/* go autoconf! */
 #include "atris.h" 
 
 #include <sys/types.h>
@@ -31,6 +31,10 @@
 #if HAVE_WINSOCK_H
 #include <winsock.h>
 #endif
+#endif
+
+#if HAVE_SYS_SELECT_H
+#include <sys/select.h>
 #endif
 
 char *error_msg = NULL;
@@ -167,7 +171,7 @@ Client_Connect(char *hoststr, int lport)
 
     memset(&addr, 0, sizeof(addr)); 
     addr.sin_family = AF_INET; /*host->h_addrtype;*/
-    memcpy(&addr.sin_addr, host->h_addr, host->h_length);
+    memcpy(&addr.sin_addr, host->h_addr_list+0, host->h_length);
     addr.sin_port=htons(port);
     mySock = socket(AF_INET, SOCK_STREAM, 0);
     if (mySock < 0) {

@@ -5,7 +5,7 @@
  * Copyright 2000, Westley Weimer & Kiri Wagstaff
  */
 
-#include <config.h>	/* go autoconf! */
+#include "config.h"	/* go autoconf! */
 #include <unistd.h>
 #include <sys/types.h>
 #include <stdarg.h>
@@ -978,11 +978,11 @@ main(int argc, char *argv[])
 	Debug("Changing directory to [%s]\n",ATRIS_LIBDIR);
 
     /* Set up the font */
-    sfont = TTF_OpenFont("/usr/share/fonts/truetype/freefont/FreeSans.ttf",18);
-     font = TTF_OpenFont("/usr/share/fonts/truetype/freefont/FreeSans.ttf",24);
-    lfont = TTF_OpenFont("/usr/share/fonts/truetype/freefont/FreeSans.ttf",36);
-    hfont = TTF_OpenFont("/usr/share/fonts/truetype/freefont/FreeSans.ttf",96);
-    if ( font == NULL ) PANIC("Couldn't open [freefont/FreeSans.ttf].", "/usr/share/fonts/truetype/"); 
+    sfont = TTF_OpenFont("graphics/SquarishSans.ttf",16);
+     font = TTF_OpenFont("graphics/SquarishSans.ttf",20);
+    lfont = TTF_OpenFont("graphics/SquarishSans.ttf",32);
+    hfont = TTF_OpenFont("graphics/SquarishSans.ttf",72);
+    if ( font == NULL ) PANIC("Couldn't open [graphics/FreeSans.ttf].", ""); 
     TTF_SetFontStyle(font, renderstyle);
     TTF_SetFontStyle(sfont, renderstyle);
     /* Initialize scores */

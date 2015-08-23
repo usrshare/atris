@@ -2,7 +2,7 @@
 /* -- Return a random value between 0 and range - 1 */
 /* blatantly cribbed from the Maelstrom package */
 
-#include <config.h>
+#include "config.h"
 #include "atris.h"
 #include <stdlib.h>
 #include <stdio.h>

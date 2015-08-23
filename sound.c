@@ -5,7 +5,7 @@
  * Copyright 2000, Kiri Wagstaff & Westley Weimer
  */
 
-#include <config.h>
+#include "config.h"
 #include <ctype.h>
 #include <unistd.h>
 

@@ -5,7 +5,7 @@
  * Copyright 2000, Westley Weimer & Kiri Wagstaff
  */
 
-#include <config.h>
+#include "config.h"
 
 #include "atris.h"
 #include "display.h"

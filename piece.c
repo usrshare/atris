@@ -5,7 +5,7 @@
  * Copyright 2000, Kiri Wagstaff & Westley Weimer
  */
 
-#include <config.h>	/* go autoconf! */
+#include "config.h"	/* go autoconf! */
 #include <ctype.h>
 #include <string.h>
 #include <unistd.h>
