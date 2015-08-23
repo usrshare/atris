@@ -93,11 +93,11 @@
 /* Define to 1 if you have the <winsock.h> header file. */
 #cmakedefine HAVE_WINSOCK_H 1
 
-/* Location of libraries if installed */
-#define ATRIS_LIBDIR "${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_DATADIR}"
+/* Location of game data if installed */
+#define ATRIS_LIBDIR "${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_DATADIR}/${PROJECT_NAME}"
 
 /* Location of state data */
-#define ATRIS_STATEDIR "${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_LOCALSTATEDIR}"
+#define ATRIS_STATEDIR "${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_LOCALSTATEDIR}/${PROJECT_NAME}"
 
 /* Name of package */
 #define PACKAGE "${PROJECT_NAME}"
@@ -106,10 +106,10 @@
 #define PACKAGE_BUGREPORT "https://github.io/usrshare/atris"
 
 /* Define to the full name of this package. */
-#define PACKAGE_NAME "atrisfix"
+#define PACKAGE_NAME "${PROJECT_NAME}"
 
 /* Define to the full name and version of this package. */
-#define PACKAGE_STRING "atrisfix 0.1"
+#define PACKAGE_STRING "${PROJECT_NAME} 0.1"
 
 /* Define to the one symbol short name of this package. */
 #define PACKAGE_TARNAME ""
@@ -131,6 +131,3 @@
 
 /* Define to empty if `const' does not conform to ANSI C. */
 #cmakedefine const
-
-/* Define to `unsigned' if <sys/types.h> does not define. */
-#cmakedefine size_t 

@@ -151,7 +151,7 @@ load_options(char * filespec)
 
     FILE *fin = fopen(filespec, "rt");
 
-    Options.full_screen = TRUE;
+    Options.full_screen = FALSE;
     Options.sound_wanted = TRUE;
     Options.flame_wanted = TRUE;
     Options.bpp_wanted = 0;
