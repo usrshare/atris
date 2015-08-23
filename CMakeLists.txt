@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8)
-project(atris)
+project(tetromix)
 
 set (CMAKE_C_FLAGS "-std=c99 -Wall -Wextra -D_POSIX_C_SOURCE=2 -Wno-override-init")
 
@@ -36,7 +36,7 @@ CHECK_INCLUDE_FILES(sys/types.h HAVE_SYS_TYPES_H)
 CONFIGURE_FILE(${CMAKE_CURRENT_SOURCE_DIR}/config.h.in ${CMAKE_CURRENT_BINARY_DIR}/config.h)
 
 
-add_executable (atris
+add_executable (tetromix
 		ai.c
 		atris.c
 		button.c
@@ -58,12 +58,12 @@ find_package(SDL REQUIRED)
 find_package(SDL_image REQUIRED)
 find_package(SDL_ttf REQUIRED)
 
-target_link_libraries(atris ${SDL_LIBRARY} ${SDL_image_LIBRARY} ${SDL_TTF_LIBRARIES})
+target_link_libraries(tetromix ${SDL_LIBRARY} ${SDL_image_LIBRARY} ${SDL_TTF_LIBRARIES})
 
-install(TARGETS atris
+install(TARGETS tetromix
 	RUNTIME DESTINATION bin
 	)
 
 install(DIRECTORY graphics styles
-	DESTINATION ${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_DATADIR}/atris
+	DESTINATION ${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_DATADIR}/tetromix
 	)
