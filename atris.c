@@ -78,7 +78,7 @@ Panic(const char *func, const char *file, char *fmt, ...)
 static void
 usage(void)
 {
-    printf("\n\t\t\t\tatris -- Alizarin Tetris\n"
+    printf("\n\t\t\t\t" PACKAGE "\n"
 	   "Usage: atris [options] \n"
 	   "\t-h --help\t\tThis message.\n"
 	   "\t-b --bg     \t\tFlaming background (default).\n"
@@ -923,7 +923,7 @@ main(int argc, char *argv[])
     SDL_Event event;
 
     umask(000);
-    Debug("\tWelcome to Alizarin Tetris (version %s - %s)\n", VERSION, "Delay" );
+    Debug("\tWelcome to Tetromix (version %s - %s)\n", VERSION, "Delay" );
     Debug("\t~~~~~~~~~~~~~~~~~~~~~~~~~~ (%s)\n", __DATE__);
 
 #ifdef HAVE_WINSOCK_H
@@ -964,7 +964,7 @@ main(int argc, char *argv[])
     }
 
     /* Set the window title */
-    SDL_WM_SetCaption("Alizarin Tetris", (char*)NULL);
+    SDL_WM_SetCaption("Tetromix", (char*)NULL);
 
     Network_Init();
 
@@ -1017,7 +1017,7 @@ main(int argc, char *argv[])
 		DRAW_LEFT | DRAW_UPDATE);
 	draw_string("Welcome To", color_purple, screen->w/2,
 		screen->h/2, DRAW_CENTER | DRAW_UPDATE | DRAW_ABOVE | DRAW_LARGE);
-	draw_string("Alizarin Tetris", color_blue, screen->w/2,
+	draw_string("Tetromix", color_blue, screen->w/2,
 		screen->h/2, DRAW_CENTER | DRAW_UPDATE | DRAW_HUGE);
     }
 
