@@ -1,0 +1,2 @@
+?package(atris):needs="X11" section="Games/Blocks" \
+  title="Atris" command="/usr/games/atris"

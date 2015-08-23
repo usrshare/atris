@@ -1,0 +1,15 @@
+Source: atris
+Homepage: http://www.wkiri.com/projects/atris
+Section: games
+Priority: optional
+Maintainer: Pascal Giard <pascal@debian.org>
+Standards-Version: 3.7.2.2
+Build-Depends: debhelper (>=4), automake, autoconf, libsdl1.2-dev (>= 1.2.2-3.1), libfreetype6-dev, libsdl-ttf2.0-dev
+
+Package: atris
+Architecture: any
+Depends: ${shlibs:Depends}, fonts-freefont-ttf
+Description: tetris-like game with a twist for Unix
+ Alizarin Tetris includes multi-player support, user-extensible color, shape 
+ and sound styles, can use TCP/IP networking and features a few different AI 
+ opponents.

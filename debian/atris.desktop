@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Version=1.0.7
+Type=Application
+Name=Atris
+Comment=Tetris-like game
+TryExec=atris
+Exec=atris
+Categories=Game;BlocksGame;

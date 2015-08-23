@@ -1,0 +1,150 @@
+atris (1.0.7.dfsg.1-8) unstable; urgency=low
+
+  * Finally applied patches fixing R-C bugs, thanks a lot to
+    Jonathan Nieder <jrnieder@gmail.com>.
+
+  [ Pascal Giard ]
+  * [debian/control]:
+    - Depend on fonts-freefont-ttf instead of ttf-freefont.
+    - Added homepage field.
+  * [debian/copyright]:
+    - Refer to the version of the license the package references in its
+      license statement i.e. GNU GPL-2.
+  * [debian/atris.postrm]:
+    - Added "set -e" to ensure that the script's execution is aborted when
+      any executed command fails.
+
+  [ Jonathan Nieder ]
+  * [debian/patches/01-atris-1.0.7.Makefile.am_pathfix.diff]:
+    - Avoid brace expansions (closes: #619717).
+  * [debian/patches, debian/source/format]:
+    - Use source format 3.0 (quilt) (closes: #619714).
+
+ -- Pascal Giard <pascal@debian.org>  Wed, 27 Jun 2012 22:30:24 -0400
+
+atris (1.0.7.dfsg.1-7.1) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * debian/rules: fix bashism (closes: #459173). 
+
+ -- Cédric Boutillier <cedric.boutillier@polytechnique.org>  Tue, 22 Jan 2008 00:44:49 +0100
+
+atris (1.0.7.dfsg.1-7) unstable; urgency=low
+
+  * Debian package cleanups, fixed all lintian warnings.
+  * [debian/rules]:
+    - Do not ignore all "make clean" errors.
+  * [debian/control]:
+    - Renamed Build-Dep on automaken to automake.
+    - Added Build-Dep on autoconf.
+  * [debian/menu]:
+    - Renamed Tetris-like to Blocks complying to Menu sub-policy 2.1.
+  * [debian/atris.desktop]:
+    - Removed Application from categories.
+    - Added BlocksGame to categories.
+
+ -- Pascal Giard <pascal@debian.org>  Thu, 27 Sep 2007 01:12:20 -0400
+
+atris (1.0.7.dfsg.1-6) unstable; urgency=low
+
+  * [debian/rules, debian/install, debian/atris.desktop]:
+    - Added menu entry for Gnome, KDE and others looking in
+      /usr/share/applications (closes: #418741).
+
+ -- Pascal Giard <pascal@debian.org>  Mon, 25 Jun 2007 23:30:46 -0400
+
+atris (1.0.7.dfsg.1-5) unstable; urgency=low
+
+  * [debian/patches/05-atris-1.0.7.atrisrc.perms.fix.diff]:
+    - Fixed ~/.atrisrc permissions to 644 using umask (closes: bug#415535).
+
+ -- Pascal Giard <pascal@debian.org>  Wed, 04 Apr 2007 15:52:17 -0400
+
+atris (1.0.7.dfsg.1-4) unstable; urgency=low
+
+  * [debian/atris.1]:
+    - Fixed typo thanks to Helge Kreutzmann <debian@helgefjell.de>
+      (closes: #389949).
+  * [debian/atris.de.1, debian/rules]:
+    - Added german translation of manpage thanks to Helge Kreutzmann
+      <debian@helgefjell.de> (closes: #389976).
+  * [debian/control]:
+    - Standards-Version bumped to 3.7.2.2, no known changes needed.
+  * [debian/copyright]:
+    - Fixed FSF address by pointing user to /usr/share/common-licenses/GPL .
+
+ -- Pascal Giard <pascal@debian.org>  Fri, 15 Dec 2006 00:55:57 -0500
+
+atris (1.0.7.dfsg.1-3) unstable; urgency=low
+
+  * [debian/patches/04-atris-1.0.7.window_mode_fix.diff]:
+    - Proper fix, we don't want the window to be resizable.
+
+ -- Pascal Giard <pascal@debian.org>  Wed, 30 Nov 2005 00:18:42 -0500
+
+atris (1.0.7.dfsg.1-2) unstable; urgency=low
+
+  * [debian/patches/04-atris-1.0.7.window_mode_fix.diff]:
+    - Fixed --window command line option.
+      Thanks to Marc Thomas <Van_Helsing_89@web.de> for reporting.
+
+ -- Pascal Giard <pascal@debian.org>  Wed, 30 Nov 2005 00:02:44 -0500
+
+atris (1.0.7.dfsg.1-1) unstable; urgency=low
+
+  * [debian/copyright]: - Added a reference to external sources.
+  * [debian/control]: - Added dependency on ttf-freefont.
+  * [debian/patches/03-atris-1.0.7.font_from_ttf-freefont.diff]:
+    - Removed non-free font, now using FreeSans from ttf-freefont
+      (closes: bug#298964).
+  * Removed non-free font from the source package (closes: bug#298964).
+  * Removed config.log from the source package.
+
+ -- Pascal Giard <pascal@debian.org>  Fri, 11 Mar 2005 02:27:41 -0500
+
+atris (1.0.7-1) unstable; urgency=low
+
+  * New upstream version.
+  * [debian/patches/03-atris-1.0.6.buffer_overflow_fix.diff]:
+    - Deleted, the fixes are integrated into upstream.
+
+ -- Pascal Giard <pascal@debian.org>  Tue, 01 Feb 2005 00:31:02 -0500
+
+atris (1.0.6-4) unstable; urgency=low
+
+  * [debian/patches/03-atris-1.0.6.buffer_overflow_fix.diff]:
+    - Fixed a buffer overflow, thanks to Ulf Harnhammar
+      <Ulf.Harnhammar.9485@student.uu.se> (closes: bug#290230).
+
+ -- Pascal Giard <pascal@debian.org>  Tue, 25 Jan 2005 00:32:18 -0500
+
+atris (1.0.6-3) unstable; urgency=low
+
+  * [debian/control]:
+    - Removed recommanded package atris-sound (license issue).
+
+ -- Pascal Giard <evilynux@yahoo.com>  Wed, 01 Dec 2004 20:36:13 -0500
+
+atris (1.0.6-2) unstable; urgency=low
+
+  * [debian/control]:
+    - Build-Depends: removed libsdl-ttf1.2-dev .
+    - Depends: Using ${shlibs:Depends} (closes: bug#278348).
+  * [debian/rules]:
+    - Getting rid of outdated config.sub (closes: bug#278054, bug#278127)
+      thanks to Kare Hviid <ukh@id.cbs.dk> for the hint.
+    - Running autoheader before building.
+    - Changed group and rights on /usr/games/atris (closes: bug#278349).
+	
+ -- Pascal Giard <evilynux@yahoo.com>  Tue, 26 Oct 2004 20:39:25 -0400
+
+atris (1.0.6-1) unstable; urgency=low
+
+  * Initial release (closes: bug#107703).
+  * Fixed statedir, "Scores" and "Players" files are writable by "games".
+  * Added manpage.
+	
+ -- Pascal Giard <evilynux@yahoo.com>  Sun, 12 Sep 2004 15:46:18 -0400
+Local variables:
+mode: debian-changelog
+End:

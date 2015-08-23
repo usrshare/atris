@@ -1,0 +1,49 @@
+#!/bin/sh
+
+set -e
+
+if [ "$1" = "configure" ] ; then
+    
+    TABLES="Atris.Players Atris.Scores"
+
+    if [ ! -d /var/games ]; then
+        mkdir /var/games
+    fi
+
+    if [ ! -d /var/games/atris ]; then
+        mkdir /var/games/atris
+    fi
+    
+    if [ ! -e /var/games/atris/Atris.Players ]; then
+	cat > /var/games/atris/Atris.Players <<EOF
+# Alizarin Tetris Identity File
+#
+# Format:
+#[level] [name] (no space before level, one space after)
+EOF
+    fi
+
+    if [ ! -e /var/games/atris/Atris.Scores ]; then
+	cat > /var/games/atris/Atris.Scores <<EOF
+# Alizarin Tetris High Score File
+0000|Never|No one yet...
+0000|Never|No one yet...
+0000|Never|No one yet...
+0000|Never|No one yet...
+0000|Never|No one yet...
+0000|Never|No one yet...
+0000|Never|No one yet...
+0000|Never|No one yet...
+0000|Never|No one yet...
+0000|Never|No one yet...
+EOF
+    fi
+
+    for FILE in $TABLES; do
+	chown root:games /var/games/atris/$FILE
+	chmod 664 /var/games/atris/$FILE
+    done
+
+fi
+
+#DEBHELPER#
