@@ -65,5 +65,5 @@ install(TARGETS atris
 	)
 
 install(DIRECTORY graphics styles
-	DESTINATION share/atris
+	DESTINATION ${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_DATADIR}/atris
 	)

@@ -94,10 +94,10 @@
 #cmakedefine HAVE_WINSOCK_H 1
 
 /* Location of libraries if installed */
-#define ATRIS_LIBDIR "${DATADIR}"
+#define ATRIS_LIBDIR "${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_DATADIR}"
 
 /* Location of state data */
-#define ATRIS_STATEDIR "${LOCALSTATEDIR}"
+#define ATRIS_STATEDIR "${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_LOCALSTATEDIR}"
 
 /* Name of package */
 #define PACKAGE "${PROJECT_NAME}"

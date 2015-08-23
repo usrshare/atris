@@ -1,6 +1,0 @@
-00-atris-1.0.7.configure.in_pathfix.diff
-01-atris-1.0.7.Makefile.am_pathfix.diff
-02-atris-1.0.7.proper_statedir.diff
-03-atris-1.0.7.font_from_ttf-freefont.diff
-04-atris-1.0.7.window_mode_fix.diff
-05-atris-1.0.7.atrisrc.perms.fix.diff
