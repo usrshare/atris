@@ -1,6 +1,6 @@
 <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
 <html> <head>
-<title>Atris Documentation</title>
+<title>Tetromix Documentation</title>
 </head>
 <body>
 <A NAME="top">
@@ -14,7 +14,7 @@
 <A HREF="#intro">1. Introduction</A><BR>
 <P>
 <A HREF="#howto">2. How to...</A><BR>
-<A HREF="#run">2.1 Run atris</A><BR>
+<A HREF="#run">2.1 Run tetromix</A><BR>
 <A HREF="#play">2.2 Play</A><BR>
 <A HREF="#commands">2.3 Use the keyboard</A><BR>
 <A HREF="#menus">2.4 Navigate the menus</A><BR>
@@ -45,7 +45,7 @@
   <TD>
       <CENTER>
 <!-- jpg here for title? -->
-<B><FONT SIZE=+2>Atris: Alizarin Tetris</FONT></B><BR>
+<B><FONT SIZE=+2>Tetromix (previously known as Atris)</FONT></B><BR>
 <FONT SIZE=+1>Documentation</FONT><BR>
 <P>
 <IMG BORDER=1 WIDTH=320 HEIGHT=240 SRC="Atris-FunShot.jpg">
@@ -59,7 +59,7 @@
 <A NAME="quick-start">
 <B>0. Quick-Start Guide</B>
 <P>
-If you are already familiar with Tetris-like games, just read the sections
+If you are already familiar with "falling blocks" games, just read the sections
 on <a href="#gravity">color gravity</a> and <a href="#power">power
 pieces</a>, then <a href="#run">run the game</a>. 
 
@@ -71,14 +71,14 @@ pieces</a>, then <a href="#run">run the game</a>.
 
 <TABLE ALIGN=RIGHT CELLPADDING=3>
 <TR><TD><IMG SRC="Atris-OpeningScreen.jpg" HSPACE=10><BR>
-<center><small>Atris Opening Screen</small></center>
+<center><small>Tetromix Opening Screen</small></center>
 </TD>
 </TR></TABLE>
 
 In this shot of the opening screen, all of the default options are active.
 <P>
-Alizarin Tetris generally responds to both the mouse and the keyboard. When
-you start the game you should see a tetris demo in the center of the screen
+Tetromix generally responds to both the mouse and the keyboard. When
+you start the game you should see a gameplay demo in the center of the screen
 and the Main Menu to the left. You can use the arrow
 keys to navigate up and down. Pressing enter or clicking with the
 mouse on one of the options will either bring up a selection submenu,
@@ -107,35 +107,35 @@ Each time you modify one of these options, the demo game will restart
 <A NAME="howto">
 <B>2. How to...</B>
 <P>
-This section describes how to perform basic atris actions (like running the
+This section describes how to perform basic actions (like running the
 game and controlling falling pieces). 
 <P>
 <A NAME="run">
-<B>2.1 Run atris</B>
+<B>2.1 Run tetromix</B>
 <P>
-Under Linux, you can usually run atris from the command prompt:
+Under Linux, you can usually run tetromix from the command prompt:
 <PRE>
-	your_machine$ atris
+	your_machine$ tetromix
 </PRE>
-If you installed atris (via "rpm -i" or "make install"), that should work
-(atris will probably be in "/usr/bin/"). If you downloaded the source and
+If you installed tetromix (via your package manager or "make install"), that should work
+(tetromix will probably be in "/usr/bin/"). If you downloaded the source and
 just compiled it, you must change to the top-level directory of the source
 distribution to run it:
 <PRE>
-	your_machine$ cd /usr/src/atris-1.0.5
-	your_machine$ ./atris
+	your_machine$ cd /usr/src/tetromix-0.1
+	your_machine$ ./tetromix
 </PRE>
-The RPM version of atris claims to add links for Gnome and KDE desktops,
+The RPM version of tetromix claims to add links for Gnome and KDE desktops,
 but we haven't tested them. 
 <P>
-Under Windows, you can also run atris from the command prompt:
+Under Windows, you can also run tetromix from the command prompt:
 <PRE>
-	C:\Program Files\atris\> atris.exe
+	C:\Program Files\tetromix\> tetromix.exe
 </PRE>
 ... or by clicking on it via Windows Explorer or somesuch. Note that in any
-event, atris looks for its game files both in the current directory and in
-a distribution directory (usually /usr/games/atris/ or
-C:\Program&nbsp;Files\atris\). If it exits shortly after starting up, make
+event, tetromix looks for its game files both in the current directory and in
+a distribution directory (usually /usr/games/tetromix/ or
+C:\Program&nbsp;Files\tetromix\). If it exits shortly after starting up, make
 sure those game files are available to it and try running it by hand in the
 right directory. 
 
@@ -160,7 +160,7 @@ faster (so you have less time to think).
 
 <TD VALIGN=CENTER>
 <IMG SRC="Atris-Win1.jpg" HSPACE=10><br>
-<center><small>Atris: About to Win</small></center>
+<center><small>Tetromix: About to Win</small></center>
 </TD>
 </TR>
 
@@ -171,7 +171,7 @@ the screen (such that your next
 falling piece cannot be placed), you <A HREF="#level">lose that round</A>. 
 </TD><TD VALIGN=CENTER>
 <IMG SRC="Atris-TopOut1.jpg" HSPACE=10><br>
-<center><small>Atris: About to Lose (oh no!)</small></center>
+<center><small>Tetromix: About to Lose (oh no!)</small></center>
 </TD>
 
 </TR>
@@ -212,7 +212,7 @@ menu, you may press <B>[ f ]</B> to toggle full-screen mode (if supported).
 <P>
 <TABLE CELLPADDING=3><TR>
 <TD VALIGN=CENTER>
-All of the menus in Alizarin Tetris are "radio menus" in the sense that
+All of the menus in Tetromix are "radio menus" in the sense that
 only one item from the menu can be selected at any one time. If there are
 multiple menus visible on the screen, the currently active one will have a
 light border around it. The current selection in each menu will be
@@ -233,7 +233,7 @@ choose something from that new menu. Or you can just click with the mouse.
 </TD>
 <TD VALIGN=CENTER>
 <IMG SRC="Atris-OpeningScreen2.jpg" HSPACE=10><br>
-<center><small>Atris: Opening Menus</small></center>
+<center><small>Tetromix: Opening Menus</small></center>
 </TD>
 </TR></TABLE>
 <P>
@@ -241,7 +241,7 @@ choose something from that new menu. Or you can just click with the mouse.
 <A NAME="games">
 <B>2.5 Game types</B>
 <P>
-Alizarin Tetris currently supports six different game types which can
+Tetromix currently supports six different game types which can
 be selected from the opening screen. A description of each one follows.
 
 <P>
@@ -259,7 +259,7 @@ be selected from the opening screen. A description of each one follows.
   </TD>
   <TD VALIGN=CENTER>
   <IMG SRC="Atris-SoloGame.jpg" HSPACE=10><br>
-  <center><small>Atris: Solo Normal Game</small></center>
+  <center><small>Tetromix: Solo Normal Game</small></center>
   </TD>
   </TR>
   <TR><TD VALIGN=CENTER><B><A HREF="Atris-Marathon.jpg"> Solo Scoring Marathon </A></B></TD>
@@ -274,7 +274,7 @@ be selected from the opening screen. A description of each one follows.
   </TD>
   <TD VALIGN=CENTER>
   <IMG SRC="Atris-Marathon.jpg" HSPACE=10><br>
-  <center><small>Atris: Solo Scoring Marathon</small></center>
+  <center><small>Tetromix: Solo Scoring Marathon</small></center>
   </TD>
   </TR>
   <TR><TD VALIGN=CENTER><B><A HREF="Atris-PlayAI.jpg">Solo vs. Computer</A></B></TD>
@@ -298,7 +298,7 @@ be selected from the opening screen. A description of each one follows.
   </TD>
   <TD VALIGN=CENTER>
   <IMG SRC="Atris-PlayAI.jpg" HSPACE=10><br>
-  <center><small>Atris: Solo vs. Computer</small></center>
+  <center><small>Tetromix: Solo vs. Computer</small></center>
   </TD>
   </TR>
   <TR><TD VALIGN=CENTER><B><A HREF="Atris-TwoPlayers2.jpg">2 Players, 1 Keyboard</A></B></TD>
@@ -312,12 +312,12 @@ be selected from the opening screen. A description of each one follows.
   </TD>
   <TD VALIGN=CENTER>
   <IMG SRC="Atris-TwoPlayers2.jpg" HSPACE=10><br>
-  <center><small>Atris: 2 Players, 1 Keyboard</small></center>
+  <center><small>Tetromix: 2 Players, 1 Keyboard</small></center>
   </TD>
   </TR>
   <TR><TD VALIGN=CENTER><B><A HREF="Atris-TwoPlayers2.jpg">2 Players, Network</A></B></TD>
   <TD>In this mode, you and a friend both have identical versions of 
-      Alizarin Tetris running on two different computers that can
+      Tetromix running on two different computers that can
       reach each other via TCP/IP. We have not tested this over
       modem-speed connections: I recommend 10baseT or better LANs. You
       must determine beforehand who will be the "server" and who will
@@ -334,7 +334,7 @@ be selected from the opening screen. A description of each one follows.
   </TD>
   <TD VALIGN=CENTER>
   <IMG SRC="Atris-TwoPlayers2.jpg" HSPACE=10><br>
-  <center><small>Atris: 2 Players, Network</small></center>
+  <center><small>Tetromix: 2 Players, Network</small></center>
   </TD>
   </TR>
   <TR><TD VALIGN=CENTER><B><A HREF="Atris-FunShot.jpg"> Computer vs. Computer </A></B></TD>
@@ -347,7 +347,7 @@ be selected from the opening screen. A description of each one follows.
   </TD>
   <TD VALIGN=CENTER>
   <IMG SRC="Atris-FunShot.jpg" HSPACE=10><br>
-  <center><small>Atris: Computer vs. Computer</small></center>
+  <center><small>Tetromix: Computer vs. Computer</small></center>
   </TD>
   </TR>
 </TABLE>
@@ -358,15 +358,15 @@ be selected from the opening screen. A description of each one follows.
 <A NAME="config">
 <B>3. Configuration</B>
 <P>
-Alizarin Tetris is highly configurable.  It supports a variety of styles
-for the tetris pieces (in color and shape) and the game sounds. 
+Tetromix is highly configurable.  It supports a variety of styles
+for the game's pieces (in color and shape) and the game sounds. 
 <P>
 <A NAME="color">
 <B>3.1 Color styles</B>
 <P>
 You can stick with the "Default Color Scheme" or you can switch to one of
 our pre-made color schemes (e.g., "Deep Blue" or "Textures"). Color styles
-just change the way in which the tetris pieces are drawn: they do not
+just change the way in which the game's pieces are drawn: they do not
 affect game mechanics in any way. [ Note, however, that the "all blue" and
 "all grey" styles make for a more difficult game for human players because
 the different colors look similar, although not identical. ]
@@ -396,15 +396,15 @@ around (without recompiling!) ... more on that <A HREF="#create">later</A>.
 <A NAME="shape">
 <B>3.3 Shape styles</B>
 <P>
-You can stick with the "Default Tetris Pieces" (i.e., the planar
-tetrominoes) or you can try for something more exciting. As math fans, we
-like the planar pentominoes here (think tetris pieces with an "area" of 5
+You can stick with the "Default Tetrominoes" (i.e., the planar shapes
+made out of 4 blocks) or you can try for something more exciting. As math fans, we
+like the planar pentominoes here (they have an "area" of 5
 instead of 4), so you can play with them exclusively (hard!) or with all of
-the tetris-like pieces that can be made up of 1-5 units. 
+the different pieces that can be made up of 1-5 units. 
 <P>
 
 The other shape styles look difficult at first but they can be a lot of
-fun, especially if you're getting bored with standard Tetris. 
+fun, especially if you're getting bored with standard tetrominoes. 
 <P>
 
 In an incredible surprise move, you can create your own shape styles as
@@ -425,7 +425,7 @@ Clicking (or pressing return) on a special option toggles its value.
   <LI><B>Background Flame</B> toggles whether or not you get the
       animated flames in the background. Turning this off will
       leave whatever flames you currently have static and significantly
-      decrease the atris CPU demand.
+      decrease the tetromix CPU demand.
   <LI><B>Power Pieces</B> toggles whether or not you can receive
       some of our <A HREF="#power">power pieces</A>
       (incorporated by special request). 
@@ -455,14 +455,14 @@ Clicking (or pressing return) on a special option toggles its value.
 <A NAME="concepts">
 <B>4. Game concepts</B>
 <P>
-This section details differences between Alizarin Tetris and general tetris
-clones.<P>
+This section details differences between Tetromix and other similar "falling pieces" games.
+<P>
 
 <A NAME="gravity">
 <B>4.1 Color gravity</B>
 <P>
 <IMG ALIGN=LEFT SRC="Atris-ColorGravity1.jpg" HSPACE=10>
-Unlike normal Tetris, in this variant a single tetris piece can be made up
+Unlike most such games, in this variant a single piece can be made up
 of tiles of two different colors. For example, the "L" piece could
 look like the figure on the left.
 <P>
@@ -531,7 +531,7 @@ unlucky opponent gets both the garbage and the blanking.
 </TD>
 <TD>
 <IMG SRC="Atris-Obscure.jpg" HSPACE=10><br>
-<center><small>Atris: Multiplayer Interference</small></center>
+<center><small>Tetromix: Multiplayer Interference</small></center>
 </TD></TR></TABLE>
 
 <P>
@@ -588,7 +588,7 @@ HREF="#solo"><B>Solo Scoring Marathon</B></A> style of game, you can
 put your name on the high score list at the end. 
 </TD><TD>
 <IMG SRC="Atris-HighScore.jpg" HSPACE=10><br>
-<center><small>Atris: High Score List</small></center>
+<center><small>Tetromix: High Score List</small></center>
 </TD></TR></TABLE>
 
 <P>
@@ -627,10 +627,10 @@ If you have a "Thumbs Up" and a "Thumbs Down", they cancel. If you have a
 <A NAME="bugs">
 <B>5. Troubleshooting</B>
 <P>
-Alizarin Tetris is hardly perfect, although we have gone to some lengths to
+Tetromix is hardly perfect, although we have gone to some lengths to
 assure stability and platform independence.  This section highlights
-some SDL pointers, atris limitations and common problems.  <A
-HREF="faq.html">Our atris FAQ</A> may also be of use. A good place to
+some SDL pointers, tetromix limitations and common problems.  <A
+HREF="faq.html">Our tetromix FAQ</A> may also be of use. A good place to
 start for general information is the <a
 href="http://www.libsdl.org/faqs.html">SDL FAQ List</a> (no really:
 it's useful!).  
@@ -669,7 +669,7 @@ Known bugs:
 If you have trouble:
 
 <UL>
-  <LI>Look in <B>stdout.txt</B> in the directory you ran atris.exe from to
+  <LI>Look in <B>stdout.txt</B> in the directory you ran tetromix.exe from to
       get an idea of what's going on.  If you can't figure it out (or
       you think it indicates a bug), please <A
       HREF="mailto:wkiri@cs.cornell.edu,weimer@cs.berkeley.edu">send
@@ -709,7 +709,7 @@ Known bugs:
       is using the sound card.  You can avoid this problem by
       <OL>
 	<LI>quitting the other application or
-	<LI>running atris with the <B>-q</B> option (to disable
+	<LI>running tetromix with the <B>-q</B> option (to disable
 	    sound).
       </OL>
 </UL>
@@ -761,7 +761,7 @@ sub-directory and make a copy of one of the small text files there
 (say, "Default.Sound" -> "Nifty.Sound"). Now edit your new copy with a
 text editor and change the name ("Default Sound Scheme" -> "My Nifty
 Sounds"). Then change all of the references to other files ("thud.wav"
--> "my_new_thud.wav"). Re-run Atris: presto! Your choice should be
+-> "my_new_thud.wav"). Re-run Tetromix: presto! Your choice should be
 visible on one of the menus. If there are any load-time problems, they
 will be displayed on <A HREF="#windows">stdout</A>.
 
@@ -775,7 +775,7 @@ Bitmaps. The first line in the file is the name of the style. The second
 line must contain a single integer giving the number of distinct colors
 (bitmaps) defined by the file. The first bitmap will be used to display the
 garbage that starts at the bottom of the screen, the remaining X-1 become
-possible values for tiles in tetris pieces. Note that network play requires
+possible values for tiles in different pieces. Note that network play requires
 that 
 <P>
 <B>Piece Styles:</B> The first line gives the name of the style, the next line
