@@ -31,6 +31,7 @@ CHECK_INCLUDE_FILES(sys/dir.h HAVE_SYS_DIR_H)
 CHECK_INCLUDE_FILES(sys/ndir.h HAVE_SYS_NDIR_H)
 CHECK_INCLUDE_FILES(sys/select.h HAVE_SYS_SELECT_H)
 CHECK_INCLUDE_FILES(sys/socket.h HAVE_SYS_SOCKET_H)
+CHECK_INCLUDE_FILES(sys/stat.h HAVE_SYS_STAT_H)
 CHECK_INCLUDE_FILES(sys/types.h HAVE_SYS_TYPES_H)
 
 CONFIGURE_FILE(${CMAKE_CURRENT_SOURCE_DIR}/config.h.in ${CMAKE_CURRENT_BINARY_DIR}/config.h)
@@ -43,6 +44,7 @@ add_executable (tetromix
 		display.c
 		event.c
 		fastrand.c
+		filesystem.c
 		gamemenu.c
 		grid.c
 		highscore.c

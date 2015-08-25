@@ -1,15 +1,19 @@
+// vim: cin:sts=4:sw=4 
 /*
- *                               Alizarin Tetris
+ *                               Tetromix
  * The user identity file.
  *
  * Copyright 2000, Kiri Wagstaff & Westley Weimer
+ * Copyright 2015, usr_share
  */
 
 #include "config.h"	/* go autoconf! */
 #include <ctype.h>
+#include <string.h>
 
 #include "atris.h"
 #include "display.h"
+#include "filesystem.h"
 #include "grid.h"
 #include "identity.h"
 #include "menu.h"
@@ -17,7 +21,6 @@
 #include "xflame.pro"
 #include "display.pro"
 
-#define ID_FILENAME	ATRIS_STATEDIR "/Atris.Players"
 
 /***************************************************************************
  *      input_string()
@@ -135,13 +138,22 @@ load_identity_file()
     identity *retval;
     char buf[2048];
 
-    FILE *fin = fopen(ID_FILENAME, "rt");
+    char fname[1024];
+
+    if (home_filename("players.dat",fname,1024)) {
+
+	    fprintf(stderr,"Unable to make a full filename for identity data. This really shouldn't happen.");
+	    Calloc(retval,identity *,sizeof(identity));
+	    return retval;
+    }
+
+    FILE *fin = fopen(fname, "rt"); //today I learned Windows has lots of extra fopen parameters.
     int count = 0;
     int i;
 
     if (!fin) {
-	Debug("fopen(%s)\n", ID_FILENAME);
-	Debug("Cannot open Identity File.\n");
+	Debug("fopen(%s)\n", fname);
+	Debug("Cannot open Identity File (%s).\n",strerror(errno));
 
 	Calloc(retval,identity *,sizeof(identity));
 	return retval;
@@ -189,7 +201,7 @@ load_identity_file()
     }
     fclose(fin);
 
-    Debug("Identity File [%s] loaded (%d players).\n",ID_FILENAME, count);
+    Debug("Identity File [%s] loaded (%d players).\n",fname, count);
 
     return retval;
 }
@@ -201,13 +213,21 @@ load_identity_file()
 void 
 save_identity_file(identity *id, char *new_name, int new_level)
 {
-    FILE *fin = fopen(ID_FILENAME,"wt");
+    char fname[1024];
+
+    if (home_filename("players.dat",fname,1024)) {
+
+	    fprintf(stderr,"Unable to make a full filename for identity data. This really shouldn't happen.");
+	    return;
+    }
+
+    FILE *fin = fopen(fname,"wt");
     int i;
     if (!fin) {
-	Debug("fopen(%s): cannot write Identity File.\n",ID_FILENAME);
+	Debug("fopen(%s): cannot write Identity File.\n",fname);
 	return;
     }
-    fprintf(fin,"# Alizarin Tetris Identity File\n"
+    fprintf(fin,"# Tetromix Identity File\n"
 	        "#\n"
 		"# Format:\n"
 		"#[level] [name] (no space before level, one space after)\n"
@@ -220,7 +240,7 @@ save_identity_file(identity *id, char *new_name, int new_level)
     }
 
 #ifdef DEBUG
-    Debug("Identity File [%s] saved (%d players).\n",ID_FILENAME, id->n +
+    Debug("Identity File [%s] saved (%d players).\n",fname, id->n +
 	    (new_name != NULL));
 #endif
     fclose(fin);

@@ -16,6 +16,7 @@
 #include "atris.h"
 #include "button.h"
 #include "display.h"
+#include "filesystem.h"
 #include "identity.h"
 #include "grid.h"
 #include "highscore.h"
@@ -58,14 +59,20 @@ save_high_scores()
 
     if (!loaded) 
 	return;
-
-    fout = fopen(ATRIS_STATEDIR "/Atris.Scores","wt");
-    if (!fout) {
-	Debug("Unable to write High Score file [Atris.Scores]: %s\n", strerror(errno));
+    
+    char fname[1024];
+    if (home_filename("scores.dat",fname,1024)) {
+	Debug("Unable to name High Score file [scores.dat]: %s\n", strerror(errno));
 	return;
     }
 
-    fprintf(fout,"# Alizarin Tetris High Score File\n");
+    fout = fopen(fname,"wt");
+    if (!fout) {
+	Debug("Unable to write High Score file [%s]: %s\n", fname, strerror(errno));
+	return;
+    }
+
+    fprintf(fout,"# Tetromix High Score File\n");
     for (i=0; i<NUM_HIGH_SCORES; i++)
 	fprintf(fout,"%04d|%s|%s\n",high_scores[i], high_dates[i], high_names[i]);
     fclose(fout);
@@ -93,8 +100,14 @@ load_high_scores()
 	}
 	loaded = TRUE;
     }
+    
+    char fname[1024];
+    if (home_filename("scores.dat",fname,1024)) {
+	Debug("Unable to name High Score file [scores.dat]: %s\n", strerror(errno));
+	return;
+    }
 
-    fin = fopen("Atris.Scores", "r");
+    fin = fopen(fname, "r");
     if (fin) {
 
 	for (i=0; !feof(fin) && i < NUM_HIGH_SCORES; i++) {
@@ -140,7 +153,7 @@ show_high_scores()
   if (!loaded) load_high_scores();
   prep_hs_bg();
 
-  draw_string("Alizarin Tetris High Scores", color_purple, screen->w/2,
+  draw_string("Tetromix High Scores", color_purple, screen->w/2,
 	  hs.y, DRAW_LARGE | DRAW_UPDATE | DRAW_CENTER );
 
   base = FIRST_SCORE_Y;
