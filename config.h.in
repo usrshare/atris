@@ -96,8 +96,8 @@
 /* Location of game data if installed */
 #define ATRIS_LIBDIR "${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_DATADIR}/${PROJECT_NAME}"
 
-/* Location of state data */
-#define ATRIS_STATEDIR "${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_LOCALSTATEDIR}/${PROJECT_NAME}"
+/* Location of state data -- no longer used */
+//#define ATRIS_STATEDIR "${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_LOCALSTATEDIR}/${PROJECT_NAME}"
 
 /* Name of package */
 #define PACKAGE "${PROJECT_NAME}"
